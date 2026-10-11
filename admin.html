@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Admin — FotoKu QR</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #fff4ef, #f5e5dc);
+      color: #342b29;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 420px;
+      padding: 32px;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 15px 50px #70452a18;
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .brand-icon {
+      font-size: 42px;
+    }
+
+    h1 {
+      margin: 10px 0;
+      color: #9c5142;
+    }
+
+    .subtitle {
+      color: #777;
+      line-height: 1.6;
+    }
+
+    label {
+      display: block;
+      margin: 18px 0 8px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ddd;
+      border-radius: 9px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 22px;
+      border: 0;
+      border-radius: 9px;
+      background: #9c5142;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: .6;
+      cursor: wait;
+    }
+
+    #status {
+      font-size: 14px;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 22px;
+      text-align: center;
+      color: #9c5142;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="login-card">
+    <div class="brand">
+      <div class="brand-icon">📸</div>
+      <h1>FotoKu QR</h1>
+      <p class="subtitle">
+        Login khusus admin dan fotografer.
+      </p>
+    </div>
+
+    <form id="login-form">
+      <label for="email">Email admin</label>
+      <input
+        id="email"
+        type="email"
+        autocomplete="username"
+        placeholder="Masukkan email admin"
+        required
+      >
+
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        autocomplete="current-password"
+        placeholder="Masukkan password"
+        required
+      >
+
+      <button id="login-button" type="submit">
+        Masuk sebagai Admin
+      </button>
+
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+
+    <a class="back-link" href="index.html">
+      ← Kembali ke galeri
+    </a>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

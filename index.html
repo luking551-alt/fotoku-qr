@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#781f32">
+  <title>FotoKu QR — Galeri Foto Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="brand">
+      <span class="brand-icon">F</span>
+      <span>FotoKu <strong>QR</strong></span>
+    </a>
+    <a href="#galeri" class="nav-link">Jelajahi Galeri</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">MOMEN BERHARGA, TERSIMPAN SELAMANYA</span>
+        <h1>Setiap momen punya <span>cerita.</span></h1>
+        <p>
+          Temukan dan unduh kenangan terbaik Anda.
+          Cukup buka tautan galeri atau pindai QR Code
+          yang diberikan fotografer Anda.
+        </p>
+        <a class="primary-button" href="#galeri">
+          Lihat Galeri <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="hero-art" aria-label="Ilustrasi galeri fotografi">
+        <div class="photo photo-back">
+          <div class="landscape"></div>
+        </div>
+        <div class="photo photo-front">
+          <div class="portrait"></div>
+          <span>beautiful moments</span>
+        </div>
+        <div class="floating-note">✦ Kenangan indah</div>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="galeri">
+        <p id="connection-status" role="status">
+  Menghubungkan ke server...
+</p>
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">PHOTO COLLECTION</span>
+          <h2>Galeri pilihan</h2>
+          <p>Semua kenangan terbaik dalam satu tempat.</p>
+        </div>
+      </div>
+
+      <div class="empty-state">
+        <div class="empty-icon">▧</div>
+        <h3>Galeri foto segera hadir</h3>
+        <p>
+          Galeri acara akan tampil di sini setelah fotografer
+          membuat dan membagikannya.
+        </p>
+      </div>
+    </section>
+
+    <section class="how-section">
+      <span class="eyebrow">MUDAH DAN PRAKTIS</span>
+      <h2>Kenangan dalam tiga langkah</h2>
+      <div class="steps">
+        <article class="step-card">
+          <span class="step-number">01</span>
+          <h3>Pindai QR Code</h3>
+          <p>Gunakan kamera HP atau buka tautan galeri.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">02</span>
+          <h3>Pilih foto</h3>
+          <p>Lihat koleksi foto dari acara Anda.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">03</span>
+          <h3>Unduh kenangan</h3>
+          <p>Simpan foto pilihan ke perangkat Anda.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="brand">
+      <span class="brand-icon">F</span>
+      <span>FotoKu <strong>QR</strong></span>
+    </a>
+    <p>Setiap foto menyimpan sebuah cerita.</p>
+    <span>© <span id="year">2026</span> FotoKu QR</span>
+  </footer>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#781f32">
+  <title>Galeri Acara — FotoKu QR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <span class="brand-icon">F</span>
+      <span>FotoKu <strong>QR</strong></span>
+    </a>
+    <a href="index.html#galeri" class="nav-link">Semua Galeri</a>
+  </header>
+
+  <main class="gallery-page">
+    <section class="gallery-section">
+      <p id="gallery-status" role="status">Memuat galeri...</p>
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">FOTOKU QR</span>
+          <h1 id="gallery-title">Galeri Acara</h1>
+          <p id="gallery-description">Kenangan terbaik Anda dalam satu tempat.</p>
+          <p id="gallery-date"></p>
+        </div>
+      </div>
+
+      <div id="photo-grid" class="public-gallery-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 FotoKu QR — Galeri Foto Online</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="galeri.js"></script>
+</body>
+</html>
