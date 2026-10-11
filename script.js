@@ -1,6 +1,7 @@
 
 const SUPABASE_URL = "https://gbymbqburckkwihaxzso.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_NmpdQiwtE5moynmBiqjmig__oSc_bTF";
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_NmpdQiwtE5moynmBiqjmig__oSc_bTF";
 
 const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
@@ -19,15 +20,21 @@ async function loadPublicGalleries() {
 
   if (!gallerySection) return;
 
-  const oldGalleryList = document.getElementById("public-gallery-list");
-  if (oldGalleryList) oldGalleryList.remove();
+  const oldGalleryList =
+    document.getElementById("public-gallery-list");
+
+  if (oldGalleryList) {
+    oldGalleryList.remove();
+  }
 
   const emptyState = gallerySection.querySelector(".empty-state");
 
   try {
     const { data: galleries, error } = await supabaseClient
       .from("galeri_acara")
-      .select("id, nama_acara, slug, tanggal_acara, deskripsi")
+      .select(
+        "id, nama_acara, slug, tanggal_acara, deskripsi"
+      )
       .eq("is_published", true)
       .order("created_at", { ascending: false });
 
@@ -38,16 +45,20 @@ async function loadPublicGalleries() {
       statusElement.className = "connection-success";
     }
 
-    const galleryList = document.createElement("div");
-    galleryList.id = "public-gallery-list";
-    galleryList.className = "public-gallery-list";
-
     if (!galleries || galleries.length === 0) {
-      if (emptyState) emptyState.style.display = "";
+      if (emptyState) {
+        emptyState.style.display = "";
+      }
       return;
     }
 
-    if (emptyState) emptyState.style.display = "none";
+    if (emptyState) {
+      emptyState.style.display = "none";
+    }
+
+    const galleryList = document.createElement("div");
+    galleryList.id = "public-gallery-list";
+    galleryList.className = "public-gallery-list";
 
     for (const gallery of galleries) {
       const card = document.createElement("article");
@@ -66,7 +77,19 @@ async function loadPublicGalleries() {
             .toLocaleDateString("id-ID")
         : "";
 
-      card.append(title, description, date);
+      const galleryLink = document.createElement("a");
+      galleryLink.href =
+        `galeri.html?slug=${encodeURIComponent(gallery.slug)}`;
+      galleryLink.className = "public-gallery-link";
+      galleryLink.textContent = "Lihat Galeri";
+
+      card.append(
+        title,
+        description,
+        date,
+        galleryLink
+      );
+
       galleryList.appendChild(card);
     }
 
